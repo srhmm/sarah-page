@@ -47,7 +47,7 @@ function InlineExternalLink({
 }) {
   return (
     <a
-      className="inline underline decoration-gray-300 decoration-3 underline-offset-2 transition-colors hover:text-gray-800 hover:decoration-gray-400"
+      className="inline underline decoration-gray-300 decoration-3 underline-offset-2 transition-colors hover:text-gray-700 hover:decoration-gray-400"
       href={href}
       rel="noopener noreferrer"
       target="_blank"
