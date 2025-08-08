@@ -116,7 +116,22 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-white text-gray-900 font-sans;
   }
+
+  button:not([disabled]),
+  [role="button"]:not([disabled]) {
+    cursor: pointer;
+  }
+}
+
+@utility txt-preset-3 {
+  @apply text-[28px]/[130%] tracking-[-0.3px] font-bold;
+  @apply tablet:text-[32px]/[140%] tablet:tracking-[-0.3px] tablet:font-bold;
+}
+
+@utility txt-preset-4 {
+  @apply text-[24px]/[140%] font-semibold;
 }
