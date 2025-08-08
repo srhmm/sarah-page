@@ -13,7 +13,7 @@ export default function ExternalLink({
       className={cn(
         'flex shrink-0 items-center justify-center',
         'focus-visible:ring-2 focus-visible:ring-blue-800 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-100 focus-visible:outline-none dark:focus-visible:ring-offset-neutral-900',
-        'rounded-10 size-9 rounded-md bg-gray-50 text-gray-600 transition-colors hover:bg-gray-100 dark:border-neutral-700 dark:bg-neutral-800'
+        'rounded-10 size-10 rounded-md bg-gray-50 text-gray-600 transition-colors hover:bg-gray-100 dark:border-neutral-700 dark:bg-neutral-800'
       )}
       href={href}
       rel="noopener noreferrer"
