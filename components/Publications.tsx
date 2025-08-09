@@ -2,13 +2,13 @@ import { Publication } from '@/types/main'
 import { conferencePublications } from '@/data/publications'
 import { cn } from '@/lib/utils'
 import { ReactNode, RefObject, useEffect, useState } from 'react'
-import { FaGithub } from 'react-icons/fa6'
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover'
-import { FaQuidditch } from 'react-icons/fa'
+import { HiArrowUpRight } from 'react-icons/hi2'
+import Spacer from '@/components/Spacer'
 
 export default function Publications({
   containerRef,
@@ -17,7 +17,8 @@ export default function Publications({
 }) {
   return (
     <div className="flex flex-col gap-4">
-      <h2 className="txt-preset-6">Publications</h2>
+      <h2 className="txt-preset-5">Publications</h2>
+      <div className="h-px w-full bg-gray-800/10" />
       <section className="flex flex-col gap-y-4">
         {conferencePublications.map((publication: Publication) => (
           <PublicationCard
@@ -39,49 +40,49 @@ function PublicationCard({
   containerRef?: RefObject<HTMLDivElement | null>
 }) {
   return (
-    <div className="flex flex-col gap-y-2 rounded-md py-4">
+    <div className="flex flex-col rounded-md py-4">
       <div className="txt-preset-8 font-normal text-gray-500">
         {publication.venue}, {publication.year}
       </div>
-      <h3 className="txt-preset-6 font-semibold">{publication.title}</h3>
-      <div className="flex flex-col gap-y-1">
-        <div className="flex">
-          {publication.authors.map((author, index) => (
-            <div key={author} className="flex items-center">
-              <span
-                className={cn(
-                  'txt-preset-7 text-gray-500',
-                  author === 'Sarah Mameche' ? '' : ''
-                )}
-              >
-                {author}
-              </span>
-              {index < publication.authors.length - 1 && (
-                <div className="mx-1 size-0.5 rounded-full bg-gray-400/0" />
+      <Spacer className="h-2" />
+      <h3 className="txt-preset-5 font-semibold">{publication.title}</h3>
+      <Spacer className="h-1" />
+      <div className="flex flex-wrap">
+        {publication.authors.map((author, index) => (
+          <div key={author} className="flex items-center">
+            <span
+              className={cn(
+                'txt-preset-6-regular text-gray-500',
+                author === 'Sarah Mameche' ? '' : ''
               )}
-            </div>
-          ))}
-        </div>
+            >
+              {author}
+            </span>
+            {index < publication.authors.length - 1 && (
+              <div className="mx-1.5 size-0.5 rounded-full bg-gray-400/0" />
+            )}
+          </div>
+        ))}
       </div>
-      <div className="mt-2 flex gap-2.5">
+      <Spacer className="h-4" />
+      <div className="flex gap-2.5">
         {publication.urls?.paper && (
           <PublicationLink url={publication.urls.paper}>
-            <span className="text-semibold txt-preset-7 text-gray-600">
-              PDF
-            </span>
+            <span className="text-semibold txt-preset-8">paper</span>
           </PublicationLink>
+        )}
+        {publication.bibtex && (
+          <Bibtex bibtex={publication.bibtex} containerRef={containerRef} />
         )}
         {publication.urls?.code && (
           <PublicationLink
             url={publication.urls.code}
             type="external"
-            className="size-10"
+            className="h-6 txt-preset-8"
           >
-            <FaGithub className="text-gray-600" />
+            code
+            <HiArrowUpRight className="size-2 stroke-1 text-gray-900" />
           </PublicationLink>
-        )}
-        {publication.bibtex && (
-          <Bibtex bibtex={publication.bibtex} containerRef={containerRef} />
         )}
       </div>
     </div>
@@ -102,7 +103,7 @@ function PublicationLink({
   return (
     <a
       className={cn(
-        'flex h-10 w-fit items-center gap-2 rounded-md bg-gray-50 px-3 py-1 transition-colors hover:bg-gray-100',
+        'flex h-6 w-fit items-center gap-1.5 rounded-md bg-gray-100 px-3 py-1 transition-colors hover:bg-gray-200',
         className
       )}
       href={url}
@@ -130,12 +131,10 @@ function Bibtex({
     setContainer(containerRef.current)
   }, [containerRef])
 
-  console.log(containerRef?.current)
-
   return (
     <Popover>
-      <PopoverTrigger className="flex h-10 w-fit items-center gap-2 rounded-md bg-gray-50 px-3 py-1 transition-colors hover:bg-gray-100">
-        <FaQuidditch className="text-gray-600" />
+      <PopoverTrigger className="flex h-6 w-fit items-center gap-2 rounded-md bg-gray-100 px-3 py-1 txt-preset-8 transition-colors hover:bg-gray-200">
+        bib
       </PopoverTrigger>
       <PopoverContent
         className="w-[calc(100vw-40px)] max-w-[600px] overflow-x-auto"

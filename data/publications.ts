@@ -19,4 +19,24 @@ export const conferencePublications: Publication[] = [
       code: 'https://github.com/srhmm/topic',
     },
   },
+  {
+    title: 'SpaceTime: Causal Discovery from Non-Stationary Time Series',
+    authors: [
+      'Sarah Mameche',
+      'Lénaïg Cornanguer',
+      'Ninad Urmi',
+      'Jilles Vreeken',
+    ],
+    year: 2025,
+    venue: 'AAAI',
+    bibtex: `@inproceedings{mameche2025spacetime,
+  title={SPACETIME: Causal Discovery from Non-Stationary Time Series},
+  author={Mameche, Sarah and Cornanguer, L{\\'e}na{\\"\\i}g and Ninad, Urmi and Vreeken, Jilles},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence (AAAI)},
+  year={2025}
+}`,
+    urls: {
+      paper: '/papers/2025-aaai-spacetime.pdf',
+    },
+  },
 ]
