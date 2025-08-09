@@ -1,10 +1,17 @@
+'use client'
+
 import Header from '@/components/Header'
+import Publications from '@/components/Publications'
+import { useRef } from 'react'
 
 export default function Home() {
+  const containerRef = useRef<HTMLDivElement>(null)
+
   return (
-    <div className="flex h-dvh px-5 py-10">
-      <div className="flex flex-col gap-10">
+    <div className="flex h-dvh justify-center px-(--x-padding) py-10 [--x-padding:--spacing(5)] tablet:pt-16">
+      <div className="flex max-w-[800px] flex-col gap-16" ref={containerRef}>
         <Header />
+        <Publications containerRef={containerRef} />
       </div>
     </div>
   )

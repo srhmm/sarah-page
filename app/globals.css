@@ -162,3 +162,7 @@
 @utility txt-preset-8 {
   @apply text-[13px]/[100%] font-semibold;
 }
+
+@utility txt-preset-mono {
+  @apply text-[13px]/[150%] font-mono;
+}
