@@ -136,7 +136,7 @@
 }
 
 @utility txt-preset-4 {
-  @apply text-[24px]/[140%] font-medium;
+  @apply text-[24px]/[130%] font-medium;
 }
 
 @utility txt-preset-4-regular {
@@ -156,10 +156,14 @@
 }
 
 @utility txt-preset-7 {
-  @apply text-[14px]/[140%] tracking-[-0.3px] font-normal;
+  @apply text-[16px]/[140%] tracking-[-0.3px] font-normal;
 }
 
 @utility txt-preset-8 {
+  @apply text-[14px]/[140%] tracking-[-0.3px] font-normal;
+}
+
+@utility txt-preset-9 {
   @apply text-[13px]/[100%] font-semibold;
 }
 

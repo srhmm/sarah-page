@@ -41,34 +41,31 @@ function PublicationCard({
 }) {
   return (
     <div className="flex flex-col rounded-md py-4">
-      <div className="txt-preset-8 font-normal text-gray-500">
+      <div className="txt-preset-9 font-normal text-gray-500">
         {publication.venue}, {publication.year}
       </div>
       <Spacer className="h-2" />
       <h3 className="txt-preset-5 font-semibold">{publication.title}</h3>
       <Spacer className="h-1" />
-      <div className="flex flex-wrap">
-        {publication.authors.map((author, index) => (
+      <div className="flex flex-wrap gap-x-3 gap-y-0.5">
+        {publication.authors.map((author) => (
           <div key={author} className="flex items-center">
             <span
               className={cn(
-                'txt-preset-6-regular text-gray-500',
+                'txt-preset-7 leading-[140%] text-gray-500',
                 author === 'Sarah Mameche' ? '' : ''
               )}
             >
               {author}
             </span>
-            {index < publication.authors.length - 1 && (
-              <div className="mx-1.5 size-0.5 rounded-full bg-gray-400/0" />
-            )}
           </div>
         ))}
       </div>
-      <Spacer className="h-4" />
+      <Spacer className="h-5" />
       <div className="flex gap-2.5">
         {publication.urls?.paper && (
           <PublicationLink url={publication.urls.paper}>
-            <span className="text-semibold txt-preset-8">paper</span>
+            <span className="text-semibold txt-preset-9">paper</span>
           </PublicationLink>
         )}
         {publication.bibtex && (
@@ -78,7 +75,7 @@ function PublicationCard({
           <PublicationLink
             url={publication.urls.code}
             type="external"
-            className="h-6 txt-preset-8"
+            className="h-6 txt-preset-9"
           >
             code
             <HiArrowUpRight className="size-2 stroke-1 text-gray-900" />
@@ -133,7 +130,7 @@ function Bibtex({
 
   return (
     <Popover>
-      <PopoverTrigger className="flex h-6 w-fit items-center gap-2 rounded-md bg-gray-100 px-3 py-1 txt-preset-8 transition-colors hover:bg-gray-200">
+      <PopoverTrigger className="flex h-6 w-fit items-center gap-2 rounded-md bg-gray-100 px-3 py-1 txt-preset-9 transition-colors hover:bg-gray-200">
         bib
       </PopoverTrigger>
       <PopoverContent
