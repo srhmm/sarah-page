@@ -29,11 +29,15 @@ function Title() {
 function Description() {
   return (
     <div className="items-center gap-4 txt-preset-6-regular text-gray-500">
-      I am a postdoctoral fellow at{' '}
+      I am a PhD candidate at{' '}
       <InlineExternalLink href="http://cispa.de">CISPA</InlineExternalLink>{' '}
-      supervised by Prof. Stefanie Jegelka. Before that, I received my PhD in
-      the Learning & Adaptive Systems group at ETH Zurich under the supervision
-      of Prof. Andreas Krause.
+      Helmholtz Center for Information Security supervised by{' '}
+      <InlineExternalLink href="https://vreeken.eu/">Prof. Jilles Vreeken</InlineExternalLink>.
+      My current research draws connections between causality and distribution shift.
+      It is motivated from the many real-world examples of distribution shifts, such as experimental data from genomics
+      or medical studies over heterogeneous patient populations.
+      Our recent projects study suitable{' '}<InlineExternalLink href="/papers/2023-neurips-learning.pdf">causal models</InlineExternalLink>{' '} for such data
+      as well as look for {' '}<InlineExternalLink href="/papers/2024-aistats-identifying.pdf">causal insights</InlineExternalLink>{' '} we can gain from such data.
     </div>
   )
 }
@@ -47,7 +51,7 @@ function Socials({ className }: { className?: string }) {
       <ExternalLink href="https://github.com/srhmm">
         <FaGithub />
       </ExternalLink>
-      <ExternalLink href="">
+      <ExternalLink href="https://www.linkedin.com/in/sarah-m-51247820b/">
         <FaLinkedinIn />
       </ExternalLink>
     </div>
