@@ -36,24 +36,16 @@ function Description() {
   return (
     <div className="items-center gap-4 txt-preset-6-regular whitespace-pre-wrap text-gray-500">
       I am a PhD candidate at{' '}
-      <InlineExternalLink href="http://cispa.de">CISPA</InlineExternalLink>{' '}
-      Helmholtz Center for Information Security supervised by{' '}
+      <InlineExternalLink href="http://cispa.de">CISPA Helmholtz Center for Information Security</InlineExternalLink>{' '}
+      supervised by Prof.{' '}
       <InlineExternalLink href="https://vreeken.eu/">
-        Prof. Jilles Vreeken
+      Jilles Vreeken
       </InlineExternalLink>
-      . My current research draws connections between causality and distribution
-      shift. It is motivated from real-world problems where changes in
-      distribution are common, such as medical studies over heterogeneous
-      patient populations or experimental data from genomics. Our recent
-      projects study{' '}
-      <InlineExternalLink href="/papers/2023-neurips-learning.pdf">
-        causal models
-      </InlineExternalLink>{' '}
-      for such data, and show which{' '}
-      <InlineExternalLink href="/papers/2024-aistats-identifying.pdf">
-        causal insights
-      </InlineExternalLink>{' '}
-      we can gain from distribution shifts.
+      . Before that, I obtained my B.Sc. and M.Sc. in Computer Science at Saarland University.
+      I am interested in applying principles from causality to machine learning,
+      with a special interest in learning under distribution shifts.
+      This research is motivated from real-world applications such as medical studies over heterogeneous
+      patient populations, experimental data from genomics, or non-stationary time series.
     </div>
   )
 }

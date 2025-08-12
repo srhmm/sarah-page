@@ -3,7 +3,7 @@ import { Publication } from '@/types/main'
 export const conferencePublications: Publication[] = [
   {
     title: 'Information-Theoretic Causal Discovery in Topological Order',
-    authors: ['Sascha Xu', 'Sarah Mameche', 'Jilles Vreeken'],
+    authors: ['Sascha Xu*', 'Sarah Mameche*', 'Jilles Vreeken'],
     year: 2025,
     venue: 'AISTATS',
     bibtex: `@inproceedings{xu2025information,
@@ -58,19 +58,49 @@ export const conferencePublications: Publication[] = [
     },
   },
   {
-    title: 'Learning Causal Models under Independent Changes',
-    authors: ['Sarah Mameche', 'David Kaltenpoth', 'Jilles Vreeken'],
-    year: 2023,
-    venue: 'NeurIPS',
-    bibtex: `@inproceedings{mameche2023learning,
+        title: 'Learning Causal Networks from Episodic Data',
+        authors: ['Osman Mian*', 'Sarah Mameche*', 'Jilles Vreeken'],
+        year: 2024,
+        venue: 'KDD',
+        bibtex: `@inproceedings{mian2024learning,
+title={Learning causal networks from episodic data},
+author={Mian, Osman and Mameche, Sarah and Vreeken, Jilles},
+booktitle={ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD)},
+year={2024}
+}`,
+        urls: {
+            paper: '/papers/2024-kdd-learning.pdf',
+        },
+  },
+  {
+        title: 'Learning Causal Models under Independent Changes',
+        authors: ['Sarah Mameche', 'David Kaltenpoth', 'Jilles Vreeken'],
+        year: 2023,
+        venue: 'NeurIPS',
+        bibtex: `@inproceedings{mameche2023learning,
   title={Learning causal models under independent changes},
   author={Mameche, Sarah and Kaltenpoth, David and Vreeken, Jilles},
   booktitle={Advances in Neural Information Processing Systems (NeurIPS)},
   year={2023}
 }`,
+        urls: {
+            paper: '/papers/2023-neurips-learning.pdf',
+            code: 'https://github.com/srhmm/linc',
+        },
+  },
+  {
+    title: 'Discovering Invariant and Changing Mechanisms from Data',
+    authors: ['Sarah Mameche', 'David Kaltenpoth', 'Jilles Vreeken'],
+    year: 2022,
+    venue: 'KDD',
+    bibtex: `@inproceedings{mameche2022discovering,
+title={Discovering invariant and changing mechanisms from data},
+author={Mameche, Sarah and Kaltenpoth, David and Vreeken, Jilles},
+booktitle={ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD)},
+year={2022}
+}`,
     urls: {
-      paper: '/papers/2023-neurips-learning.pdf',
-      code: 'https://github.com/srhmm/linc',
+        paper: '/papers/2022-kdd-discovering.pdf',
     },
   },
 ]

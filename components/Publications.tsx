@@ -24,7 +24,7 @@ export default function Publications({
 }) {
   return (
     <div className="flex flex-col gap-4">
-      <h2 className="txt-preset-5">Recent Publications</h2>
+      <h2 className="txt-preset-5">Publications</h2>
       <div className="h-px w-full bg-gray-800/10" />
       <section className="flex flex-col gap-y-4">
         {conferencePublications.map((publication: Publication) => (
