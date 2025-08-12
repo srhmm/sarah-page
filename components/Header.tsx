@@ -1,6 +1,6 @@
 import { ExternalLink, InlineExternalLink } from '@/components/ExternalLink'
 import { cn } from '@/lib/utils'
-import { FaEnvelope, FaGithub, FaLinkedinIn } from 'react-icons/fa6'
+import { FaEnvelope, FaGithub, FaLinkedinIn, FaGraduationCap } from 'react-icons/fa6'
 
 export default function Header() {
   return (
@@ -18,7 +18,7 @@ function Title() {
       <div className="size-32 rounded-full bg-[url(/sarah.png)] bg-cover bg-center" />
       <div className="flex items-baseline gap-3">
         <span className="txt-preset-3 font-extrabold">Sarah Mameche</span>
-        <span className="txt-preset-6 font-light text-gray-500 capitalize">
+        <span className="txt-preset-6 font-medium text-gray-500 capitalize">
           / PhD candidate
         </span>
       </div>
@@ -34,10 +34,10 @@ function Description() {
       Helmholtz Center for Information Security supervised by{' '}
       <InlineExternalLink href="https://vreeken.eu/">Prof. Jilles Vreeken</InlineExternalLink>.
       My current research draws connections between causality and distribution shift.
-      It is motivated from real-world problems where changes in distribution are common, such as experimental data from genomics
-      or medical studies over heterogeneous patient populations.
-      Our current projects study {' '}<InlineExternalLink href="/papers/2023-neurips-learning.pdf">causal models</InlineExternalLink>{' '} to give insight into such data,
-      and show which {' '}<InlineExternalLink href="/papers/2024-aistats-identifying.pdf">causal insights</InlineExternalLink>{' '} we can gain from such data.
+      It is motivated from real-world problems where changes in distribution are common, such as medical studies over heterogeneous patient populations
+        or experimental data from genomics.
+      Our recent projects study {' '}<InlineExternalLink href="/papers/2023-neurips-learning.pdf">causal models</InlineExternalLink>{' '} for such data,
+      and show which {' '}<InlineExternalLink href="/papers/2024-aistats-identifying.pdf">causal insights</InlineExternalLink>{' '} we can gain from distribution shifts.
     </div>
   )
 }
@@ -53,6 +53,9 @@ function Socials({ className }: { className?: string }) {
       </ExternalLink>
       <ExternalLink href="https://www.linkedin.com/in/sarah-m-51247820b/">
         <FaLinkedinIn />
+      </ExternalLink>
+      <ExternalLink href="https://scholar.google.com/citations?hl=en&user=uRajBQEAAAAJ">
+        <FaGraduationCap />
       </ExternalLink>
     </div>
   )

@@ -38,6 +38,7 @@ export const conferencePublications: Publication[] = [
     urls: {
         paper: '/papers/2025-aaai-spacetime.pdf',
         code: 'https://github.com/srhmm/spacetime',
+        demo: 'https://github.com/srhmm/spacetime/blob/main/src/st_tutorial.ipynb',
     },
   },
   {

@@ -81,6 +81,16 @@ function PublicationCard({
             <HiArrowUpRight className="size-2 stroke-1 text-gray-900" />
           </PublicationLink>
         )}
+        {publication.urls?.demo && (
+          <PublicationLink
+              url={publication.urls.demo}
+              type="external"
+              className="h-6 txt-preset-9"
+          >
+              tutorial
+              <HiArrowUpRight className="size-2 stroke-1 text-gray-900" />
+          </PublicationLink>
+        )}
       </div>
     </div>
   )
