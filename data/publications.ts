@@ -36,49 +36,41 @@ export const conferencePublications: Publication[] = [
   year={2025}
 }`,
     urls: {
-        paper: '/papers/2025-aaai-spacetime.pdf',
-        code: 'https://github.com/srhmm/spacetime',
-        demo: 'https://github.com/srhmm/spacetime/blob/main/src/st_tutorial.ipynb',
+      paper: '/papers/2025-aaai-spacetime.pdf',
+      code: 'https://github.com/srhmm/spacetime',
+      demo: 'https://github.com/srhmm/spacetime/blob/main/src/st_tutorial.ipynb',
     },
   },
   {
     title: 'Identifying Confounding from Causal Mechanism Shifts',
-    authors: [
-        'Sarah Mameche',
-        'Jilles Vreeken',
-        'David Kaltenpoth',
-    ],
+    authors: ['Sarah Mameche', 'Jilles Vreeken', 'David Kaltenpoth'],
     year: 2024,
     venue: 'AISTATS',
     bibtex: `@inproceedings{mameche2024identifying,
-title={Identifying confounding from causal mechanism shifts},
-author={Mameche, Sarah and Vreeken, Jilles and Kaltenpoth, David},
-booktitle={International Conference on Artificial Intelligence and Statistics (AISTATS)},
-year={2024}
+  title={Identifying confounding from causal mechanism shifts},
+  author={Mameche, Sarah and Vreeken, Jilles and Kaltenpoth, David},
+  booktitle={International Conference on Artificial Intelligence and Statistics (AISTATS)},
+  year={2024}
 }`,
     urls: {
-        paper: '/papers/2024-aistats-identifying.pdf',
-        code: 'https://github.com/srhmm/coco',
+      paper: '/papers/2024-aistats-identifying.pdf',
+      code: 'https://github.com/srhmm/coco',
     },
   },
   {
     title: 'Learning Causal Models under Independent Changes',
-    authors: [
-        'Sarah Mameche',
-        'David Kaltenpoth',
-        'Jilles Vreeken',
-    ],
+    authors: ['Sarah Mameche', 'David Kaltenpoth', 'Jilles Vreeken'],
     year: 2023,
     venue: 'NeurIPS',
     bibtex: `@inproceedings{mameche2023learning,
-title={Learning causal models under independent changes},
-author={Mameche, Sarah and Kaltenpoth, David and Vreeken, Jilles},
-journal={Advances in Neural Information Processing Systems (NeurIPS)},
-year={2023}
+  title={Learning causal models under independent changes},
+  author={Mameche, Sarah and Kaltenpoth, David and Vreeken, Jilles},
+  booktitle={Advances in Neural Information Processing Systems (NeurIPS)},
+  year={2023}
 }`,
     urls: {
-        paper: '/papers/2023-neurips-learning.pdf',
-        code: 'https://github.com/srhmm/linc',
+      paper: '/papers/2023-neurips-learning.pdf',
+      code: 'https://github.com/srhmm/linc',
     },
   },
 ]
