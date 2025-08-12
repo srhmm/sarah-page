@@ -174,9 +174,9 @@ function Bibtex({
           onClick={onCopy}
         >
           {copyState === 'default' ? (
-            <LucideClipboard className="text-gray-500" />
+            <LucideClipboard className="text-gray-600/90" />
           ) : (
-            <LucideCheck className="text-gray-500" />
+            <LucideCheck className="text-gray-600/90" />
           )}
         </Button>
       </PopoverContent>
