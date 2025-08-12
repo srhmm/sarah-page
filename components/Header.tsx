@@ -34,10 +34,10 @@ function Description() {
       Helmholtz Center for Information Security supervised by{' '}
       <InlineExternalLink href="https://vreeken.eu/">Prof. Jilles Vreeken</InlineExternalLink>.
       My current research draws connections between causality and distribution shift.
-      It is motivated from the many real-world examples of distribution shifts, such as experimental data from genomics
+      It is motivated from real-world problems where changes in distribution are common, such as experimental data from genomics
       or medical studies over heterogeneous patient populations.
-      Our recent projects study suitable{' '}<InlineExternalLink href="/papers/2023-neurips-learning.pdf">causal models</InlineExternalLink>{' '} for such data
-      as well as look for {' '}<InlineExternalLink href="/papers/2024-aistats-identifying.pdf">causal insights</InlineExternalLink>{' '} we can gain from such data.
+      Our current projects study {' '}<InlineExternalLink href="/papers/2023-neurips-learning.pdf">causal models</InlineExternalLink>{' '} to give insight into such data,
+      and show which {' '}<InlineExternalLink href="/papers/2024-aistats-identifying.pdf">causal insights</InlineExternalLink>{' '} we can gain from such data.
     </div>
   )
 }
