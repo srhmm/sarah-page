@@ -53,7 +53,7 @@ function PublicationCard({
       </div>
       <Spacer className="h-1.5" />
       <h3 className="txt-preset-5 font-semibold">{publication.title}</h3>
-      <Spacer className="h-0.5" />
+      <Spacer className="h-1" />
       <div className="flex flex-wrap gap-x-3 gap-y-0.5">
         {publication.authors.map((author) => (
           <div key={author} className="flex items-center">
