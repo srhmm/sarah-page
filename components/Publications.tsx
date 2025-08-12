@@ -7,8 +7,15 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover'
-import { HiArrowUpRight } from 'react-icons/hi2'
+import {
+  HiArrowUpRight,
+  HiMiniCheck,
+  HiOutlineClipboard,
+} from 'react-icons/hi2'
 import Spacer from '@/components/Spacer'
+import { Button } from '@/components/ui/button'
+import { FaCheck, FaRegClipboard } from 'react-icons/fa6'
+import { LucideCheck, LucideClipboard } from 'lucide-react'
 
 export default function Publications({
   containerRef,
@@ -44,9 +51,9 @@ function PublicationCard({
       <div className="txt-preset-9 font-normal text-gray-500">
         {publication.venue}, {publication.year}
       </div>
-      <Spacer className="h-2" />
+      <Spacer className="h-1.5" />
       <h3 className="txt-preset-5 font-semibold">{publication.title}</h3>
-      <Spacer className="h-1" />
+      <Spacer className="h-0.5" />
       <div className="flex flex-wrap gap-x-3 gap-y-0.5">
         {publication.authors.map((author) => (
           <div key={author} className="flex items-center">
@@ -83,12 +90,12 @@ function PublicationCard({
         )}
         {publication.urls?.demo && (
           <PublicationLink
-              url={publication.urls.demo}
-              type="external"
-              className="h-6 txt-preset-9"
+            url={publication.urls.demo}
+            type="external"
+            className="h-6 txt-preset-9"
           >
-              tutorial
-              <HiArrowUpRight className="size-2 stroke-1 text-gray-900" />
+            tutorial
+            <HiArrowUpRight className="size-2 stroke-1 text-gray-900" />
           </PublicationLink>
         )}
       </div>
@@ -132,11 +139,23 @@ function Bibtex({
   const [container, setContainer] = useState<HTMLDivElement | undefined>(
     undefined
   )
+  const [copyState, setCopyState] = useState<'default' | 'copied'>('default')
 
   useEffect(() => {
     if (!containerRef?.current) return
     setContainer(containerRef.current)
   }, [containerRef])
+
+  async function onCopy() {
+    if (copyState === 'copied') {
+      return
+    }
+    await navigator.clipboard.writeText(bibtex)
+    setCopyState('copied')
+    setTimeout(() => {
+      setCopyState('default')
+    }, 2000)
+  }
 
   return (
     <Popover>
@@ -144,10 +163,22 @@ function Bibtex({
         bib
       </PopoverTrigger>
       <PopoverContent
-        className="w-[calc(100vw-40px)] max-w-[600px] overflow-x-auto"
+        className="w-[var(--radix-popover-content-available-width)] overflow-x-auto"
         collisionBoundary={container}
       >
         <pre className="txt-preset-mono">{bibtex}</pre>
+        <Button
+          className="absolute top-2 right-2 rounded-md bg-white hover:bg-gray-50"
+          variant="ghost"
+          size="sm"
+          onClick={onCopy}
+        >
+          {copyState === 'default' ? (
+            <LucideClipboard className="text-gray-500" />
+          ) : (
+            <LucideCheck className="text-gray-500" />
+          )}
+        </Button>
       </PopoverContent>
     </Popover>
   )
