@@ -78,6 +78,11 @@ function PublicationCard({
         {publication.bibtex && (
           <Bibtex bibtex={publication.bibtex} containerRef={containerRef} />
         )}
+        {publication.urls?.poster && (
+          <PublicationLink url={publication.urls.poster}>
+            <span className="text-semibold txt-preset-9">poster</span>
+          </PublicationLink>
+        )}
         {publication.urls?.code && (
           <PublicationLink
             url={publication.urls.code}
@@ -168,7 +173,7 @@ function Bibtex({
       >
         <pre className="txt-preset-mono">{bibtex}</pre>
         <Button
-          className="absolute top-2 right-2 rounded-md bg-white hover:bg-gray-50"
+          className="absolute top-2 right-2 rounded-md bg-white hover:bg-sky-50"
           variant="ghost"
           size="sm"
           onClick={onCopy}

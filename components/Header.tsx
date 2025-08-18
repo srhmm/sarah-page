@@ -24,7 +24,7 @@ function Title() {
       <div className="size-32 rounded-full bg-[url(/sarah.png)] bg-cover bg-center" />
       <div className="flex items-baseline gap-3">
         <span className="txt-preset-3 font-extrabold">Sarah Mameche</span>
-        <span className="txt-preset-6 font-medium text-gray-500 capitalize">
+        <span className="txt-preset-6 font-regular text-gray-500 capitalize">
           / PhD candidate
         </span>
       </div>
@@ -42,7 +42,7 @@ function Description() {
       Jilles Vreeken
       </InlineExternalLink>
       . Before that, I obtained my B.Sc. and M.Sc. in Computer Science at Saarland University.
-      I am interested in applying principles from causality to machine learning,
+      I am interested in applying ideas from causality to machine learning,
       with a special interest in learning under distribution shifts.
       This research is motivated from real-world applications such as medical studies over heterogeneous
       patient populations, experimental data from genomics, or non-stationary time series.
