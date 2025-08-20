@@ -21,7 +21,7 @@ export default function Header() {
 function Title() {
   return (
     <div className="flex flex-col gap-5">
-      <div className="size-32 rounded-full bg-[url(/sarah.png)] bg-cover bg-center" />
+      <div className="size-32 rounded-full bg-[url(/sarahc.jpg)] bg-cover bg-center" />
       <div className="flex items-baseline gap-3">
         <span className="txt-preset-3 font-extrabold">Sarah Mameche</span>
         <span className="txt-preset-6 font-regular text-gray-500 capitalize">
@@ -34,18 +34,22 @@ function Title() {
 
 function Description() {
   return (
-    <div className="items-center gap-4 txt-preset-6-regular whitespace-pre-wrap text-gray-500">
+    <div className="items-center gap-4 txt-preset-6-regular whitespace-pre-wrap text-gray-600">
       I am a PhD candidate at{' '}
       <InlineExternalLink href="http://cispa.de">CISPA Helmholtz Center for Information Security</InlineExternalLink>{' '}
       supervised by Prof.{' '}
       <InlineExternalLink href="https://vreeken.eu/">
       Jilles Vreeken
       </InlineExternalLink>
-      . Before that, I obtained my B.Sc. and M.Sc. in Computer Science at Saarland University.
-      I am interested in applying ideas from causality to machine learning,
-      with a special interest in learning under distribution shifts.
-      This research is motivated from real-world applications such as medical studies over heterogeneous
-      patient populations, experimental data from genomics, or non-stationary time series.
+      . Before that, I studied Computer Science at Saarland University.
+      I am interested in causality, and especially in addressing distribution shifts through causal models.
+      For example, this includes causal discovery from multiple contexts, in mixtures of populations, and over non-stationary time series.
+      Example applications that motivate this research are medical studies over heterogeneous
+      patient groups, interventional data from genomics, or time series data from the environmental sciences.
+      You can find my{' '}
+        <InlineExternalLink href="/sarahcv.pdf">
+            CV
+        </InlineExternalLink> here.
     </div>
   )
 }

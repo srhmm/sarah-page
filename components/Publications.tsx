@@ -59,7 +59,7 @@ function PublicationCard({
           <div key={author} className="flex items-center">
             <span
               className={cn(
-                'txt-preset-7 leading-[140%] text-gray-500',
+                'txt-preset-7 leading-[140%] text-gray-600',
                 author === 'Sarah Mameche' ? '' : ''
               )}
             >
@@ -122,7 +122,7 @@ function PublicationLink({
   return (
     <a
       className={cn(
-        'flex h-6 w-fit items-center gap-1.5 rounded-md bg-gray-100 px-3 py-1 transition-colors hover:bg-gray-200',
+        'flex h-6 w-fit items-center gap-1.5 rounded-md bg-[#dbede7] px-3 py-1 text-gray-800 transition-colors hover:bg-[#7ad7be]',
         className
       )}
       href={url}
@@ -164,7 +164,7 @@ function Bibtex({
 
   return (
     <Popover>
-      <PopoverTrigger className="flex h-6 w-fit items-center gap-2 rounded-md bg-gray-100 px-3 py-1 txt-preset-9 transition-colors hover:bg-gray-200">
+      <PopoverTrigger className="flex h-6 w-fit items-center gap-2 rounded-md bg-[#dbede7] px-3 py-1 txt-preset-9 transition-colors hover:bg-[#7ad7be]">
         bib
       </PopoverTrigger>
       <PopoverContent
@@ -173,7 +173,7 @@ function Bibtex({
       >
         <pre className="txt-preset-mono">{bibtex}</pre>
         <Button
-          className="absolute top-2 right-2 rounded-md bg-white hover:bg-sky-50"
+          className="absolute top-2 right-2 rounded-md bg-white hover:bg-[#f5fbf7]"
           variant="ghost"
           size="sm"
           onClick={onCopy}
