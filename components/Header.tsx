@@ -21,11 +21,12 @@ export default function Header() {
 function Title() {
   return (
     <div className="flex flex-col gap-5">
-      <div className="size-32 rounded-full bg-[url(/sarahc.jpg)] bg-cover bg-center" />
+      <div className="size-32 rounded-full bg-[url(/sarah.png)] bg-cover bg-center" />
       <div className="flex items-baseline gap-3">
         <span className="txt-preset-3 font-extrabold">Sarah Mameche</span>
-        <span className="txt-preset-6 font-regular text-gray-500 capitalize">
-          / PhD candidate
+        <span className="txt-preset-7 text-[#e3e2ec] font-extrabold">/</span>
+        <span className="txt-preset-7 font-regular text-gray-500 capitalize">
+          PhD candidate
         </span>
       </div>
     </div>
@@ -42,8 +43,8 @@ function Description() {
       Jilles Vreeken
       </InlineExternalLink>
       . Before that, I studied Computer Science at Saarland University.
-      I am interested in causality, and especially in addressing distribution shifts through causal models.
-      For example, this includes causal discovery from multiple contexts, in mixtures of populations, and over non-stationary time series.
+      I am interested in causality, especially in addressing distribution shifts through causal models.
+      For example, I am interested in causal discovery from multiple contexts, in mixtures of populations, and over non-stationary time series.
       Example applications that motivate this research are medical studies over heterogeneous
       patient groups, interventional data from genomics, or time series data from the environmental sciences.
       You can find my{' '}

@@ -25,7 +25,7 @@ export default function Publications({
   return (
     <div className="flex flex-col gap-4">
       <h2 className="txt-preset-5">Publications</h2>
-      <div className="h-px w-full bg-gray-800/10" />
+      <div className="h-px w-full bg-[#e3e2ec]" />
       <section className="flex flex-col gap-y-4">
         {conferencePublications.map((publication: Publication) => (
           <PublicationCard
@@ -122,7 +122,7 @@ function PublicationLink({
   return (
     <a
       className={cn(
-        'flex h-6 w-fit items-center gap-1.5 rounded-md bg-[#dbede7] px-3 py-1 text-gray-800 transition-colors hover:bg-[#7ad7be]',
+        'flex h-6 w-fit items-center gap-1.5 rounded-md bg-[#e3e2ec] px-3 py-1 text-gray-800 transition-colors hover:bg-[#bac7e3]',
         className
       )}
       href={url}
@@ -164,7 +164,7 @@ function Bibtex({
 
   return (
     <Popover>
-      <PopoverTrigger className="flex h-6 w-fit items-center gap-2 rounded-md bg-[#dbede7] px-3 py-1 txt-preset-9 transition-colors hover:bg-[#7ad7be]">
+      <PopoverTrigger className="flex h-6 w-fit items-center gap-2 rounded-md bg-[#e3e2ec] px-3 py-1 txt-preset-9 transition-colors hover:bg-[#bac7e3]">
         bib
       </PopoverTrigger>
       <PopoverContent
@@ -173,7 +173,7 @@ function Bibtex({
       >
         <pre className="txt-preset-mono">{bibtex}</pre>
         <Button
-          className="absolute top-2 right-2 rounded-md bg-white hover:bg-[#f5fbf7]"
+          className="absolute top-2 right-2 rounded-md bg-white hover:bg-[#eae9ed]"
           variant="ghost"
           size="sm"
           onClick={onCopy}
