@@ -18,19 +18,20 @@ export default function Publications({
   containerRef?: RefObject<HTMLDivElement | null>
 }) {
   return (
-    <div className="flex flex-col gap-4">
+    <section className="flex flex-col gap-4">
       <h2 className="txt-preset-5">Publications</h2>
       <div className="h-px w-full bg-[#e3e2ec]" />
-      <section className="flex flex-col gap-y-4">
+      <ul className="flex flex-col gap-y-4">
         {conferencePublications.map((publication: Publication) => (
-          <PublicationCard
-            key={publication.title}
-            publication={publication}
-            containerRef={containerRef}
-          />
+          <li key={publication.title}>
+            <PublicationCard
+              publication={publication}
+              containerRef={containerRef}
+            />
+          </li>
         ))}
-      </section>
-    </div>
+      </ul>
+    </section>
   )
 }
 

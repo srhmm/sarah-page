@@ -9,10 +9,10 @@ export default function Home() {
 
   return (
     <div className="flex min-h-dvh justify-center px-(--x-padding) py-8 [--x-padding:--spacing(5)] tablet:pt-16">
-      <div className="flex max-w-[700px] flex-col gap-16" ref={containerRef}>
+      <main className="flex max-w-[700px] flex-col gap-16" ref={containerRef}>
         <Header />
         <Publications containerRef={containerRef} />
-      </div>
+      </main>
     </div>
   )
 }

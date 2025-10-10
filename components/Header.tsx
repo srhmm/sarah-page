@@ -29,11 +29,11 @@ function Title() {
         className="rounded-full"
       />
       <div className="flex items-baseline gap-3">
-        <span className="txt-preset-3 font-extrabold">Sarah Mameche</span>
+        <h1 className="txt-preset-3 font-extrabold">Sarah Mameche</h1>
         <span className="txt-preset-7 font-extrabold text-[#e3e2ec]">/</span>
-        <span className="font-regular txt-preset-7 text-gray-500 capitalize">
+        <h2 className="font-regular txt-preset-7 text-gray-500 capitalize">
           PhD candidate
-        </span>
+        </h2>
       </div>
     </div>
   )
@@ -41,7 +41,7 @@ function Title() {
 
 function Description() {
   return (
-    <div className="items-center gap-4 txt-preset-6-regular whitespace-pre-wrap text-gray-600">
+    <p className="items-center gap-4 txt-preset-6-regular whitespace-pre-wrap text-gray-600">
       I am a PhD candidate at{' '}
       <InlineExternalLink href="https://cispa.de">
         CISPA Helmholtz Center for Information Security
@@ -59,25 +59,33 @@ function Description() {
       interventional data from genomics, or time series data from the
       environmental sciences. You can find my{' '}
       <InlineExternalLink href="/sarahcv.pdf">CV</InlineExternalLink> here.
-    </div>
+    </p>
   )
 }
 
 function Socials({ className }: { className?: string }) {
   return (
-    <div className={cn('flex gap-x-2.5', className)}>
-      <ExternalLink href="mailto:sarah.mameche@cispa.de">
-        <FaEnvelope />
-      </ExternalLink>
-      <ExternalLink href="https://github.com/srhmm">
-        <FaGithub />
-      </ExternalLink>
-      <ExternalLink href="https://www.linkedin.com/in/sarah-m-51247820b/">
-        <FaLinkedinIn />
-      </ExternalLink>
-      <ExternalLink href="https://scholar.google.com/citations?user=uRajBQEAAAAJ">
-        <FaGoogleScholar />
-      </ExternalLink>
-    </div>
+    <ul className={cn('flex gap-x-2.5', className)}>
+      <li>
+        <ExternalLink href="mailto:sarah.mameche@cispa.de">
+          <FaEnvelope />
+        </ExternalLink>
+      </li>
+      <li>
+        <ExternalLink href="https://github.com/srhmm">
+          <FaGithub />
+        </ExternalLink>
+      </li>
+      <li>
+        <ExternalLink href="https://www.linkedin.com/in/sarah-m-51247820b/">
+          <FaLinkedinIn />
+        </ExternalLink>
+      </li>
+      <li>
+        <ExternalLink href="https://scholar.google.com/citations?user=uRajBQEAAAAJ">
+          <FaGoogleScholar />
+        </ExternalLink>
+      </li>
+    </ul>
   )
 }

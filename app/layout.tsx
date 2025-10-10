@@ -15,7 +15,28 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: 'Sarah Mameche',
-  description: 'TODO',
+  description: 'Personal website of Sarah Mameche, PhD candidate at CISPA',
+  openGraph: {
+    title: 'Sarah Mameche',
+    description: 'Personal website of Sarah Mameche, PhD candidate at CISPA',
+    url: 'https://sarahmameche.com',
+    siteName: 'Sarah Mameche',
+    images: [
+      {
+        url: '/sarah.png',
+        width: 600,
+        height: 600,
+        alt: 'Sarah Mameche',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Sarah Mameche',
+    description: 'Personal website of Sarah Mameche, PhD candidate at CISPA',
+    images: ['/sarah.png'],
+  },
 }
 
 export default function RootLayout({
@@ -26,7 +47,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${sansFont.variable} ${geistMono.variable} antialiased bg-gradient-to-b from-[#fcf8fa] via-white to-[#fcf8fa]`}
+        className={`${sansFont.variable} ${geistMono.variable} bg-gradient-to-b from-[#fcf8fa] via-white to-[#fcf8fa] antialiased`}
       >
         {children}
       </body>
