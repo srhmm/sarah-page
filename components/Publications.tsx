@@ -7,14 +7,9 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover'
-import {
-  HiArrowUpRight,
-  HiMiniCheck,
-  HiOutlineClipboard,
-} from 'react-icons/hi2'
+import { HiArrowUpRight } from 'react-icons/hi2'
 import Spacer from '@/components/Spacer'
 import { Button } from '@/components/ui/button'
-import { FaCheck, FaRegClipboard } from 'react-icons/fa6'
 import { LucideCheck, LucideClipboard } from 'lucide-react'
 
 export default function Publications({
