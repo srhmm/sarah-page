@@ -21,6 +21,7 @@ year={2025},
   {
     title: 'Information-Theoretic Causal Discovery in Topological Order',
     authors: ['Sascha Xu*', 'Sarah Mameche*', 'Jilles Vreeken'],
+    year: 2025,
     venue: 'AISTATS',
     bibtex: `@inproceedings{xu2025information,
   title={Information-Theoretic Causal Discovery in Topological Order},
