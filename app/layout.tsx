@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
-import { Geist_Mono, Mulish } from 'next/font/google'
+import { Geist_Mono, Mulish, Wix_Madefor_Text } from 'next/font/google'
 import './globals.css'
 import { ReactNode } from 'react'
 
-const sansFont = Mulish({
+const sansFont = Wix_Madefor_Text({
   variable: '--font-default-sans',
   subsets: ['latin'],
 })
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     siteName: 'Sarah Mameche',
     images: [
       {
-        url: '/sarah.png',
+        url: '/sarahc.png',
         width: 600,
         height: 600,
         alt: 'Sarah Mameche',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Sarah Mameche',
     description: 'Personal website of Sarah Mameche, PhD candidate at CISPA',
-    images: ['/sarah.png'],
+    images: ['/sarahc.png'],
   },
 }
 
@@ -47,7 +47,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${sansFont.variable} ${geistMono.variable} bg-gradient-to-b from-[#fcf8fa] via-white to-[#fcf8fa] antialiased`}
+        className={`${sansFont.variable} ${geistMono.variable} bg-gradient-to-b from-prim-50 via-white to-white antialiased`}
       >
         {children}
       </body>

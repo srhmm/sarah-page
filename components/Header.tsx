@@ -22,7 +22,7 @@ function Title() {
   return (
     <div className="flex flex-col gap-5">
       <Image
-        src="/sarah.png"
+        src="/sarahc.png"
         alt="Profile Picture"
         width={128}
         height={128}
@@ -30,7 +30,7 @@ function Title() {
       />
       <div className="flex items-baseline gap-3">
         <h1 className="txt-preset-3 font-extrabold">Sarah Mameche</h1>
-        <span className="txt-preset-7 font-extrabold text-[#e3e2ec]">/</span>
+        <span className="txt-preset-7 font-extrabold text-prim-200">/</span>
         <h2 className="font-regular txt-preset-7 text-gray-500 capitalize">
           PhD candidate
         </h2>
@@ -50,15 +50,12 @@ function Description() {
       <InlineExternalLink href="https://vreeken.eu/">
         Jilles Vreeken
       </InlineExternalLink>
-      . Before that, I studied Computer Science at Saarland University. I am
-      interested in causality, especially in addressing distribution shifts
-      through causal models. For example, I am interested in causal discovery
-      from multiple contexts, in mixtures of populations, and over
-      non-stationary time series. Example applications that motivate this
-      research are medical studies over heterogeneous patient groups,
+      . I am
+      interested in causal machine learning, with focus on addressing distribution shifts
+      through causality. Example applications that motivate this
+      research are studies over heterogeneous diseases or patient groups,
       interventional data from genomics, or time series data from the
-      environmental sciences. You can find my{' '}
-      <InlineExternalLink href="/sarahcv.pdf">CV</InlineExternalLink> here.
+      environmental sciences.
     </p>
   )
 }

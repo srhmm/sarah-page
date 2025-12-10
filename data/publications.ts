@@ -2,9 +2,25 @@ import { Publication } from '@/types/main'
 
 export const conferencePublications: Publication[] = [
   {
+    title: 'Causal Mixture Models: Characterization and Discovery',
+    authors: ['Sarah Mameche', 'Janis Kalofolias', 'Jilles Vreeken'],
+    year: 2025,
+    venue: 'NeurIPS',
+    bibtex: `@inproceedings{mameche2025causal,
+title={Causal Mixture Models: Characterization and Discovery},
+author={Sarah Mameche and Janis Kalofolias and Jilles Vreeken},
+booktitle={The Thirty-ninth Annual Conference on Neural Information Processing Systems},
+year={2025}, 
+}`,
+    urls: {
+    paper: '/papers/2025-neurips-causal.pdf',
+    poster: '/posters/2025-neurips-causal.pdf',
+    code: 'https://github.com/srhmm/cmm',
+    },
+  },
+  {
     title: 'Information-Theoretic Causal Discovery in Topological Order',
     authors: ['Sascha Xu*', 'Sarah Mameche*', 'Jilles Vreeken'],
-    year: 2025,
     venue: 'AISTATS',
     bibtex: `@inproceedings{xu2025information,
   title={Information-Theoretic Causal Discovery in Topological Order},
@@ -42,6 +58,23 @@ export const conferencePublications: Publication[] = [
       code: 'https://github.com/srhmm/spacetime',
     },
   },
+    {
+        title: 'Identifying Confounding from Causal Mechanism Shifts',
+        authors: ['Sarah Mameche', 'Jilles Vreeken', 'David Kaltenpoth'],
+        year: 2024,
+        venue: 'AISTATS',
+        bibtex: `@inproceedings{mameche2024identifying,
+  title={Identifying confounding from causal mechanism shifts},
+  author={Mameche, Sarah and Vreeken, Jilles and Kaltenpoth, David},
+  booktitle={International Conference on Artificial Intelligence and Statistics (AISTATS)},
+  year={2024}
+}`,
+        urls: {
+            paper: '/papers/2024-aistats-identifying.pdf',
+            poster: '/posters/2024-aistats-identifying.pdf',
+            code: 'https://github.com/srhmm/coco',
+        },
+    },
   {
     title: 'Learning Causal Networks from Episodic Data',
     authors: ['Osman Mian*', 'Sarah Mameche*', 'Jilles Vreeken'],
@@ -59,22 +92,6 @@ year={2024}
     },
   },
   {
-    title: 'Identifying Confounding from Causal Mechanism Shifts',
-    authors: ['Sarah Mameche', 'Jilles Vreeken', 'David Kaltenpoth'],
-    year: 2024,
-    venue: 'AISTATS',
-    bibtex: `@inproceedings{mameche2024identifying,
-  title={Identifying confounding from causal mechanism shifts},
-  author={Mameche, Sarah and Vreeken, Jilles and Kaltenpoth, David},
-  booktitle={International Conference on Artificial Intelligence and Statistics (AISTATS)},
-  year={2024}
-}`,
-    urls: {
-      paper: '/papers/2024-aistats-identifying.pdf',
-      code: 'https://github.com/srhmm/coco',
-    },
-  },
-  {
         title: 'Learning Causal Models under Independent Changes',
         authors: ['Sarah Mameche', 'David Kaltenpoth', 'Jilles Vreeken'],
         year: 2023,
@@ -87,7 +104,6 @@ year={2024}
 }`,
         urls: {
             paper: '/papers/2023-neurips-learning.pdf',
-            code: 'https://github.com/srhmm/linc',
         },
   },
   {
