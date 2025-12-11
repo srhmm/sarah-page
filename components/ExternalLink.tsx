@@ -13,7 +13,7 @@ export function ExternalLink({
       className={cn(
         'flex shrink-0 items-center justify-center',
         'focus-visible:ring-2 focus-visible:ring-gray-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-100 focus-visible:outline-none dark:focus-visible:ring-offset-neutral-900',
-        'rounded-10 size-10 rounded-md bg-prim-100 text-gray-600/90 transition-colors hover:bg-prim-200 dark:bg-neutral-800',
+        'rounded-10 size-10 rounded-md bg-gray-50 text-gray-600/90 transition-colors hover:bg-gray-100 border border-gray-200 dark:bg-neutral-800',
       )}
       href={href}
       rel="noopener noreferrer"
@@ -33,7 +33,7 @@ export function InlineExternalLink({
 }) {
   return (
     <a
-      className="inline underline decoration-prim-200 decoration-3 underline-offset-2 transition-colors hover:text-gray-700 hover:decoration-prim-300"
+      className="inline underline decoration-prim-300 decoration-3 underline-offset-2 transition-colors hover:text-gray-700 hover:decoration-prim-400"
       href={href}
       rel="noopener noreferrer"
       target="_blank"
@@ -41,4 +41,23 @@ export function InlineExternalLink({
       {children}
     </a>
   )
+}
+
+export function PublicationExternalLink({
+                                       href,
+                                       children,
+                                   }: {
+    href: string
+    children: ReactNode
+}) {
+    return (
+        <a
+            className="inline underline decoration-white decoration-3 underline-offset-2 transition-colors hover:text-gray-800 hover:decoration-prim-400"
+            href={href}
+            rel="noopener noreferrer"
+            target="_blank"
+        >
+            {children}
+        </a>
+    )
 }

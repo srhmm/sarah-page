@@ -200,6 +200,9 @@
   @apply text-[13px]/[100%] font-semibold;
 }
 
+@utility txt-preset-italic {
+    @apply text-[16px]/[140%] italic font-normal;
+}
 @utility txt-preset-mono {
   @apply text-[13px]/[160%] font-mono;
 }

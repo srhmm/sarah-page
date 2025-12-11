@@ -11,6 +11,7 @@ import { HiArrowUpRight } from 'react-icons/hi2'
 import Spacer from '@/components/Spacer'
 import { Button } from '@/components/ui/button'
 import { LucideCheck, LucideClipboard } from 'lucide-react'
+import {InlineExternalLink, PublicationExternalLink} from "@/components/ExternalLink";
 
 export default function Publications({
   containerRef,
@@ -19,7 +20,7 @@ export default function Publications({
 }) {
   return (
     <section className="flex flex-col gap-4">
-      <h2 className="txt-preset-5">Publications</h2>
+      <h2 className="txt-preset-italic text-gray-600">Publications</h2>
       <div className="h-px w-full bg-gray-300" />
       <ul className="flex flex-col gap-y-4">
         {conferencePublications.map((publication: Publication) => (
@@ -48,7 +49,11 @@ function PublicationCard({
         {publication.venue}, {publication.year}
       </div>
       <Spacer className="h-1.5" />
-      <h3 className="txt-preset-5 font-semibold">{publication.title}</h3>
+      <h3 className="txt-preset-5 font-semibold">
+          <PublicationExternalLink href={publication.urls?.paper}>
+              {publication.title}
+          </PublicationExternalLink>
+      </h3>
       <Spacer className="h-1" />
       <div className="flex flex-wrap gap-x-3 gap-y-0.5">
         {publication.authors.map((author) => (
@@ -56,7 +61,7 @@ function PublicationCard({
             <span
               className={cn(
                 'txt-preset-7 leading-[140%] text-gray-600',
-                  author.startsWith("Sarah Mameche") ? 'underline underline-offset-3 decoration-gray-600' : ''
+                  author.startsWith("Sarah Mameche") ? 'underline underline-offset-3 decoration-gray-500' : ''
               )}
             >
               {author}
@@ -66,11 +71,6 @@ function PublicationCard({
       </div>
       <Spacer className="h-5" />
       <div className="flex gap-2.5">
-        {publication.urls?.paper && (
-          <PublicationLink url={publication.urls.paper}>
-            <span className="text-semibold txt-preset-9">paper</span>
-          </PublicationLink>
-        )}
         {publication.bibtex && (
           <Bibtex bibtex={publication.bibtex} containerRef={containerRef} />
         )}
@@ -118,7 +118,7 @@ function PublicationLink({
   return (
     <a
       className={cn(
-        'flex h-6 w-fit items-center gap-1.5 rounded-md bg-white px-3 py-1 text-gray-800 transition-colors hover:bg-prim-100 border border-gray-300',
+        'flex h-6 w-fit items-center gap-1.5 rounded-md bg-gray-100 px-3 py-1 text-gray-800 transition-colors hover:bg-gray-200',
         className
       )}
       href={url}
@@ -160,7 +160,7 @@ function Bibtex({
 
   return (
     <Popover>
-      <PopoverTrigger className="flex h-6 w-fit items-center gap-2 rounded-md bg-white px-3 py-1 txt-preset-9 transition-colors hover:bg-prim-100 border border-gray-300">
+      <PopoverTrigger className="flex h-6 w-fit items-center gap-2 rounded-md bg-gray-100 px-3 py-1 txt-preset-9 transition-colors hover:bg-gray-200">
         bib
       </PopoverTrigger>
       <PopoverContent
