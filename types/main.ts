@@ -1,3 +1,5 @@
+import type { DemoKey } from '@/components/demo/types'
+
 export type Publication = {
   title: string
   authors: string[]
@@ -9,6 +11,6 @@ export type Publication = {
     paper?: string
     poster?: string
     code?: string
-    demo?: string
   }
+  demoId?: DemoKey // @A: check
 }

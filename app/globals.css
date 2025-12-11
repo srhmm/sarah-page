@@ -200,6 +200,10 @@
   @apply text-[13px]/[100%] font-semibold;
 }
 
+@utility txt-preset-10 {
+    @apply text-[12px]/[100%] italic font-normal;
+}
+
 @utility txt-preset-italic {
     @apply text-[16px]/[140%] italic font-normal;
 }

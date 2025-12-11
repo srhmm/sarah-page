@@ -51,10 +51,10 @@ function Description() {
         Jilles Vreeken
       </InlineExternalLink>
       . I am
-      interested in causal machine learning, with focus on addressing distribution shifts
+      interested in causal machine learning, with focus on addressing various forms of distribution shifts
       through causality. Example applications that motivate this
       research are studies over heterogeneous diseases or patient groups,
-      interventional data from genomics, or time series data from the
+      interventional experiments in genomics, or time series data from the
       environmental sciences.
     </p>
   )
