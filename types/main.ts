@@ -1,4 +1,4 @@
-import type { DemoKey } from '@/components/demo/types'
+export type DemoKey = 'causal-mixture-models' | 'topic-ordering' | 'prettypgfplots-line' | 'causal-change' //| 'space-time'
 
 export type Publication = {
   title: string
@@ -12,5 +12,22 @@ export type Publication = {
     poster?: string
     code?: string
   }
-  demoId?: DemoKey // @A: check
+  demoId?: DemoKey
+}
+
+export type Project = {
+    title: string
+    subtitle: string
+    authors: string[]
+    year: number
+    language: string
+    bibtex: string
+    abstract?: string
+    urls: {
+        documentation?: string
+        zip?: string
+        sty?: string
+        code?: string
+    }
+    demoId?: DemoKey
 }

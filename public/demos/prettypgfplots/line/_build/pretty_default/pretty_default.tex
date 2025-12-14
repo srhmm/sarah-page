@@ -1,0 +1,14 @@
+\documentclass[tikz,border=2pt]{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{prettypgfplots}
+\begin{document}
+
+\begin{tikzpicture}
+\begin{axis}[pretty line]
+\foreach \y in {y1,y2,y3}{
+  \addplot table [x=x, y=\y] {data.tsv};
+}
+\end{axis}
+\end{tikzpicture}
+\end{document}

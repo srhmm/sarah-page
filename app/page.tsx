@@ -3,6 +3,7 @@
 import Header from '@/components/Header'
 import Publications from '@/components/Publications'
 import { useRef } from 'react'
+import Projects from "@/components/Projects";
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -12,6 +13,7 @@ export default function Home() {
       <main className="flex max-w-[700px] flex-col gap-16" ref={containerRef}>
         <Header />
         <Publications containerRef={containerRef} />
+          {/* <Projects containerRef={containerRef}  */}
       </main>
     </div>
   )

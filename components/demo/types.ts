@@ -1,1 +1,0 @@
-export type DemoKey = 'causal-mixture-models' | 'topic-ordering'

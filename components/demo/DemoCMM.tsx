@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useState } from 'react'
+import {ActiveButton} from "@/components/ui/button";
 
 type DemoCMMProps = {
     title: string
+    subtitle: string
     dataUrl: string
 }
 
@@ -25,7 +27,7 @@ type CmmData = {
     }
 }
 
-export default function DemoCMM({ title, dataUrl }: DemoCMMProps) {
+export default function DemoCMM({ title, subtitle, dataUrl }: DemoCMMProps) {
     const [data, setData] = useState<CmmData | null>(null)
     const [error, setError] = useState<string | null>(null)
     const [isColored, setIsColored] = useState(false)
@@ -80,23 +82,15 @@ export default function DemoCMM({ title, dataUrl }: DemoCMMProps) {
             <div className="flex items-center justify-between gap-2">
                 <div className="txt-preset-9 text-gray-700">
                     {title}
-                    {data.meta?.variable_pair && (
+                        <span className="text-gray-500"> ·  {subtitle} </span>
+                    {/*{data.meta?.variable_pair && (
                         <span className="text-gray-500"> · {data.meta.variable_pair}</span>
-                    )}
+                    )} */}
                 </div>
-                <button
-                    type="button"
-                    onClick={handleToggleColor}
-                    className="rounded-full border border-gray-300 px-3 py-1 text-xs font-medium text-gray-800 hover:bg-gray-100"
-                >
+                <ActiveButton active={isColored} onClick={handleToggleColor}>
                     {isColored ? 'Hide components' : 'Reveal components'}
-                </button>
+                </ActiveButton>
             </div>
-
-            <p className="txt-preset-9 text-gray-500">
-                Scatterplot of (X, Y). Click anywhere on the plot, or use the button, to
-                toggle between gray points and coloring by discovered mixture components.
-            </p>
 
             <div className="flex justify-center">
                 <svg
@@ -145,15 +139,15 @@ export default function DemoCMM({ title, dataUrl }: DemoCMMProps) {
                     })}
                 </svg>
             </div>
-
-            <div className="txt-preset-10 text-gray-400">
-                Tip: You can click directly on the scatterplot to toggle the coloring.
-            </div>
+            {/*{isColored && (
+                <div className="txt-preset-10 text-gray-400">
+                    Components
+                </div>
+            )}*/}
         </div>
     )
 }
 
-// small helper hook for layout + scales
 function useScatterLayout(data: CmmData | null) {
     return useMemo(() => {
         if (!data || !data.points.length) return null
@@ -193,7 +187,7 @@ function useScatterLayout(data: CmmData | null) {
             padding.bottom -
             ((y - y0) / (y1 - y0)) * (height - padding.top - padding.bottom)
 
-        const colors = ['#2886CF', '#E2A432']
+        const colors = ['#4fa2e1', '#E2A432']
 
         return {
             width,

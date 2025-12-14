@@ -1,0 +1,10 @@
+%preamble
+%\usepackage{prettyplots}
+
+\begin{tikzpicture}
+\begin{axis}[pretty line]
+\addplot+[mark=*] table [x=x, y=y1] {data.tsv};
+\addplot+[mark=diamond*] table [x=x, y=y2] {data.tsv};
+\addplot+[mark=triangle*] table [x=x, y=y3] {data.tsv};
+\end{axis}
+\end{tikzpicture}

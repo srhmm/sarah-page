@@ -57,3 +57,29 @@ function Button({
 }
 
 export { Button, buttonVariants }
+
+
+
+export function ActiveButton({
+                          active,
+                          onClick,
+                          children,
+                      }: {
+    active: boolean
+    onClick: () => void
+    children: React.ReactNode
+}) {
+    return (
+        <button
+            type="button"
+            onClick={onClick}
+            className={`rounded-md px-3 py-1 text-xs font-medium ${
+                active
+                    ? 'bg-prim-200 text-gray-900'
+                    : 'bg-prim-100 text-gray-800 hover:bg-prim-200'
+            }`}
+        >
+            {children}
+        </button>
+    )
+}

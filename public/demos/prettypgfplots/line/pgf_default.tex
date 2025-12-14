@@ -1,0 +1,7 @@
+\begin{tikzpicture}
+\begin{axis}
+\foreach \y in {y1,y2,y3}{
+  \addplot table [x=x, y=\y] {data.tsv};
+}
+\end{axis}
+\end{tikzpicture}

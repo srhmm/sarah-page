@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 
 type DemoTopicProps = {
     title: string
+    subtitle: string
     dataUrl: string
 }
 
@@ -58,7 +59,7 @@ type PositionedNode = {
 
 type Phase = 'initial' | 'highlight' | 'edges'
 
-export default function DemoTopic({ title, dataUrl }: DemoTopicProps) {
+export default function DemoTopic({ title, subtitle, dataUrl }: DemoTopicProps) {
     const [data, setData] = useState<TopicData | null>(null)
     const [error, setError] = useState<string | null>(null)
     const [flatStepIndex, setFlatStepIndex] = useState(0)
@@ -138,10 +139,10 @@ export default function DemoTopic({ title, dataUrl }: DemoTopicProps) {
     const stepLabel = `Step ${flatStepIndex + 1} / ${totalFlatSteps}`
     const phaseLabel =
         phase === 'initial'
-            ? 'Initial: only nodes are visible.'
+            ? 'Initial: unknown causal graphical structure.'
             : phase === 'highlight'
-                ? `Iteration ${iterationIndex + 1}: chosen source is highlighted.`
-                : `Iteration ${iterationIndex + 1}: edges are added and pruned.`
+                ? `Iteration ${iterationIndex + 1}: choose the next node in the topological order.`
+                : `Iteration ${iterationIndex + 1}: add and prune causal edges.`
 
     const edgesToRender =
         phase === 'edges' ? edgesAtIteration : edgesBeforeIteration
@@ -162,7 +163,7 @@ export default function DemoTopic({ title, dataUrl }: DemoTopicProps) {
                         type="button"
                         onClick={handlePrev}
                         disabled={flatStepIndex === 0}
-                        className="rounded-full border border-gray-300 px-3 py-1 text-xs font-medium text-gray-800 disabled:opacity-40 hover:bg-gray-100"
+                        className="rounded-md px-3 py-1 text-xs font-medium text-gray-800 disabled:opacity-40  bg-prim-100 hover:bg-prim-200 disabled:hover:bg-prim-100 "
                     >
                         Prev
                     </button>
@@ -170,20 +171,13 @@ export default function DemoTopic({ title, dataUrl }: DemoTopicProps) {
                         type="button"
                         onClick={handleNext}
                         disabled={flatStepIndex === maxFlatIndex}
-                        className="rounded-full border border-gray-300 px-3 py-1 text-xs font-medium text-gray-800 disabled:opacity-40 hover:bg-gray-100"
+                        className="rounded-md px-3 py-1 text-xs font-medium text-gray-800 disabled:opacity-40  bg-prim-100 hover:bg-prim-200"
                     >
                         Next
                     </button>
                 </div>
             </div>
 
-            {/* Short description */}
-            <p className="txt-preset-9 text-gray-500">
-                TOPIC discovers a topological ordering by repeatedly picking a source
-                node, adding outgoing edges by score, and pruning incoming edges. First
-                you see the nodes, then the chosen source, then the edges added/pruned
-                for that iteration.
-            </p>
 
             {/* Main content: graph + side panel */}
             <div className="flex flex-col gap-3 md:flex-row">
@@ -216,12 +210,12 @@ export default function DemoTopic({ title, dataUrl }: DemoTopicProps) {
                         source={phase === 'initial' ? null : source}
                     />
 
-                    {hasTruth && (
+                     {hasTruth && (
                         <div className="flex justify-end">
                             <button
                                 type="button"
                                 onClick={() => setShowTruth((prev) => !prev)}
-                                className="rounded-full border border-gray-300 px-3 py-1 text-xs font-medium text-gray-800 hover:bg-gray-100"
+                                className="rounded-md border border-gray-300 px-3 py-1 text-xs font-medium text-gray-800 hover:bg-gray-100"
                             >
                                 {showTruth ? 'Hide ground-truth graph' : 'Show ground-truth graph'}
                             </button>
@@ -230,8 +224,9 @@ export default function DemoTopic({ title, dataUrl }: DemoTopicProps) {
                 </div>
             </div>
 
-            {/* Expandable ground-truth section */}
-            {hasTruth && showTruth && (
+            {/* Expandable ground-truth section
+        */}
+            { hasTruth && showTruth && (
                 <div className="flex flex-col gap-1 mt-1">
                     <div className="txt-preset-10 text-gray-500">
                         Ground-truth causal graph
@@ -241,17 +236,10 @@ export default function DemoTopic({ title, dataUrl }: DemoTopicProps) {
                     </div>
                 </div>
             )}
-
-            <div className="txt-preset-10 text-gray-400">
-                Tip: use the stepper to see TOPIC&apos;s reasoning: which node is
-                selected as a source, which edges are added, and which parents get
-                pruned.
-            </div>
         </div>
     )
 }
 
-/* ---------- Layout helpers ---------- */
 
 function useNodeLayout(data: TopicData | null) {
     return useMemo(() => {
@@ -590,7 +578,7 @@ function TopicGraph({
                 let dash: string | undefined
 
                 if (isAddedNow) {
-                    stroke = '#16a34a'
+                    stroke = '#4fa2e1'
                     marker = 'url(#arrowhead-added)'
                     strokeWidth = 1.6
                 } else if (isPrunedNow) {
@@ -617,8 +605,8 @@ function TopicGraph({
             {nodes.map((n) => {
                 const isSource = source !== null && n.id === source
                 const radius = isSource ? 10 : 8
-                const fill = isSource ? '#2563eb' : '#ffffff'
-                const stroke = isSource ? '#2563eb' : '#9ca3af'
+                const fill = isSource ? '#4fa2e1' : '#ffffff'
+                const stroke = isSource ? '#4fa2e1' : '#9ca3af'
                 const strokeWidth = isSource ? 2 : 1.2
 
                 return (
@@ -672,7 +660,7 @@ function OrderStrip({ nodes, order, remaining, source }: OrderStripProps) {
                 {order.map((id) => (
                     <span
                         key={id}
-                        className="rounded-full bg-blue-50 px-2 py-0.5 txt-preset-10 text-blue-700 border border-blue-200"
+                        className="rounded-md bg-blue-50 px-2 py-0.5 txt-preset-10 text-prim-700 border border-prim-200"
                     >
             {nameMap.get(id) ?? id}
           </span>
@@ -688,7 +676,7 @@ function OrderStrip({ nodes, order, remaining, source }: OrderStripProps) {
                     return (
                         <span
                             key={id}
-                            className={`rounded-full px-2 py-0.5 txt-preset-10 border ${
+                            className={`rounded-md px-2 py-0.5 txt-preset-10 border ${
                                 isCurrent
                                     ? 'bg-yellow-50 text-yellow-800 border-yellow-300'
                                     : 'bg-gray-50 text-gray-700 border-gray-200'
@@ -746,7 +734,7 @@ function RankingPanel({
                         <div
                             key={r.node}
                             className={`flex items-center justify-between txt-preset-10 py-0.5 ${
-                                isSource ? 'text-blue-700 font-medium' : 'text-gray-700'
+                                isSource ? 'text-prim-700 font-medium' : 'text-gray-700'
                             }`}
                         >
                             <span>{label}</span>

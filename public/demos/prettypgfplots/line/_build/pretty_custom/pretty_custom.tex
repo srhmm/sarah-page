@@ -1,0 +1,13 @@
+\documentclass[tikz,border=2pt]{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{prettypgfplots}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[pretty line]
+\addplot+[mark=*] table [x=x, y=y1] {data.tsv};
+\addplot+[mark=diamond*] table [x=x, y=y2] {data.tsv};
+\addplot+[mark=triangle*] table [x=x, y=y3] {data.tsv};
+\end{axis}
+\end{tikzpicture}
+\end{document}

@@ -98,10 +98,9 @@ function PublicationCard({
             <button
                 type="button"
                 onClick={() => setDemoOpen((prev) => !prev)}
-                className="ml-auto inline-flex items-center gap-1 rounded-full border border-gray-300 px-3 py-1 text-xs font-medium text-gray-800 hover:bg-gray-100"
+                className="ml-auto inline-flex items-center gap-1 rounded-md px-3 py-1 text-xs font-medium text-prim-800 bg-prim-100 hover:bg-prim-200"
                 aria-expanded={demoOpen}
             >
-                <span>{demoOpen ? 'Hide demo' : 'Show demo'}</span>
                 <HiChevronDown
                     className={cn(
                         'size-3 transition-transform',
@@ -123,7 +122,7 @@ function PublicationCard({
   )
 }
 
-function PublicationLink({
+export function PublicationLink({
   url,
   children,
   type,
@@ -149,7 +148,7 @@ function PublicationLink({
   )
 }
 
-function Bibtex({
+export function Bibtex({
   bibtex,
   containerRef,
 }: {
